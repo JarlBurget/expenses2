@@ -1,18 +1,16 @@
 import React from 'react';
 import ExpenseItem from './ExpenseItem';
+import Card from './Card';
 import './Expenses.css';
 
 const Expenses = (props) => {
-    // Kontrollime saabuvat props-i
-    console.log(props);
+    // Lisame kaitse tühja või määramata massiivi jaoks
 
     return (
-        <div className="expenses">
-            {props.expenses.map((expense) => (
-                <ExpenseItem key={expense.id} data={expense} />
-            ))}
-        </div>
+        <Card className="expenses">
+            <ExpenseItem data={props.expenses[0]} />
+            <ExpenseItem data={props.expenses[1]} />
+        </Card>
     );
 };
-
 export default Expenses;
